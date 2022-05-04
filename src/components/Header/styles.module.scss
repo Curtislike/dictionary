@@ -1,0 +1,41 @@
+@import '../../variables/colors';
+@import '../../variables/screen-sizes';
+
+header {
+  height: 90px;
+  font-family: 'Varela Round', sans-serif;
+  background-color: white;
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  .logo {
+    display: flex;
+    align-items: center;
+    width: 90px;
+    height: 100%;
+    padding: 0 10px;
+    font-size: 16px;
+    line-height: 22px;
+    text-align: right;
+    background-color: $main-blue;
+    color: white;
+    margin: 0 20px;
+  }
+  .title {
+    margin: 0 20px;
+    color: $dark;
+    font-size: 32px;
+    text-align: center;
+  }
+}
+
+@media (max-width: $tablet-small) {
+  header {
+    .title {
+      font-size: 22px;
+    }
+  }
+}

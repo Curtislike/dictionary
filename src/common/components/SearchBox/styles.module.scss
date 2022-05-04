@@ -1,0 +1,51 @@
+@import '../../../variables/colors';
+@import '../../../variables/screen-sizes';
+
+.form {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  .inputWrap {
+    padding-left: 120px;
+    input {
+      border: 2px solid $light-blue;
+      border-radius: 20px;
+      width: 550px;
+      height: 40px;
+      padding: 5px;
+    }
+  }
+  button {
+    border: none;
+    background-color: white;
+    img {
+      width: 40px;
+      height: 40px;
+      margin: 0 20px;
+      cursor: pointer;
+    }
+  }
+}
+
+@media (max-width: $tablet) {
+  .form {
+    .inputWrap {
+      padding-left: 20px;
+      input {
+        width: 400px;
+      }
+    }
+  }
+}
+
+@media (max-width: $tablet-small) {
+  .form {
+    .inputWrap {
+      padding-left: 20px;
+      input {
+        width: 300px;
+      }
+    }
+  }
+}
