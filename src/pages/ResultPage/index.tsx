@@ -3,12 +3,12 @@ import { useSelector } from 'react-redux';
 import { TailSpin } from 'react-loader-spinner';
 import { Howl } from 'howler';
 
-import { getWordDefinitionLoadingSelector, getWordDefinitionSelectos } from '../../store/selectors/wordDefenition.selectors';
+import { getWordDefinitionLoadingSelector, getWordDefinitionSelector } from '../../store/selectors/wordDefenition.selectors';
 
 import styles from './styles.module.scss';
 
 const ResultPage = () => {
-  const wordDefinition = useSelector(getWordDefinitionSelectos);
+  const wordDefinition = useSelector(getWordDefinitionSelector);
   const isLoading = useSelector(getWordDefinitionLoadingSelector);
 
   const soundPlay = (src: string) => {

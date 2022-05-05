@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 
 import searchImg from '../../../assets/search.svg';
 import { fetchWordDefenition } from '../../../store/actions/wordDefinition.actions';
+import { getWordDefinitionSelector } from '../../../store/selectors/wordDefenition.selectors';
 
 import styles from './styles.module.scss';
 
@@ -11,6 +12,7 @@ const SearchBox = () => {
   const dispatch = useDispatch();
   const [value, setValue] = useState('');
   const navigate = useNavigate();
+  const wordDefenition = useSelector(getWordDefinitionSelector);
 
   const handleInputChange = (event: { target: { value: string } }) => {
     setValue(event.target.value);
@@ -19,7 +21,10 @@ const SearchBox = () => {
   const handleSubmit = (event: { preventDefault: () => void }) => {
     event.preventDefault();
     dispatch(fetchWordDefenition(value));
-    navigate('/result');
+    if (wordDefenition.length) {
+      navigate('/result');
+    }
+    navigate('/not-found');
   };
 
   return (
