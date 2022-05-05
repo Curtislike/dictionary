@@ -1,19 +1,19 @@
 import React from 'react';
+import { Route, Routes } from 'react-router-dom';
 
-import Header from './components/Header';
-import SearchBox from './common/components/SearchBox';
+import ResultPage from './pages/ResultPage';
+import HomePage from './pages/HomePage';
 
 import './App.scss';
-import ResultPage from './pages/ResultPage';
 
 function App() {
   return (
     <div className="App">
-      <Header />
-      <div className="searchWrap">
-        <SearchBox />
-        <ResultPage />
-      </div>
+      <Routes>
+        <Route path="/" element={<HomePage />}>
+          <Route path="result" element={<ResultPage />} />
+        </Route>
+      </Routes>
     </div>
   );
 }
