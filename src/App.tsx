@@ -4,6 +4,7 @@ import Header from './components/Header';
 import SearchBox from './common/components/SearchBox';
 
 import './App.scss';
+import ResultPage from './pages/ResultPage';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Header />
       <div className="searchWrap">
         <SearchBox />
+        <ResultPage />
       </div>
     </div>
   );
