@@ -1,4 +1,6 @@
-export interface IWordDefinition {
+export interface IWordDefinition extends Array<IResponseWordDefinition> {}
+
+interface IResponseWordDefinition {
   word: string;
   phonetic: string;
   phonetics: {
