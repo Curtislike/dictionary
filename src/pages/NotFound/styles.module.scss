@@ -1,0 +1,12 @@
+.notFound {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  h1 {
+    font-size: 90px;
+  }
+  p {
+    font-size: 24px;
+  }
+}
