@@ -23,7 +23,7 @@ const ResultPage = () => {
     <>
       {isLoading ? (
         <div className={styles.loader}>
-          <TailSpin color="#6667ab" height={80} width={80} />
+          <TailSpin color="#6667ab" height={100} width={100} />
         </div>
       ) : (
         <div className={styles.wordsWrap}>
