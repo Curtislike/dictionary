@@ -14,15 +14,10 @@ function App() {
   const location = useLocation();
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  // console.log(word, 'word');
+  console.log(word, 'word');
 
   const handleChangeWord = (value: React.SetStateAction<string>) => {
     setWord(value);
-  };
-
-  const changePageSuccess = () => {
-    console.log('get in func');
-    navigate(`/${word}`);
   };
 
   const changePageNotFound = () => {
@@ -31,12 +26,15 @@ function App() {
 
   useEffect(() => {
     const path = location.pathname.split('/')[1];
-    if (path.length === 0 || path === word) {
+    console.log(path, 'path');
+    if (path.length === 0 || path === word || path === 'not-found') {
       return;
     }
+    dispatch(fetchWordDefenition(path, changePageNotFound));
     setWord(path);
-    dispatch(fetchWordDefenition(path, changePageSuccess, changePageNotFound));
+    console.log(path, 'path');
   }, [location]);
+
   return (
     <div className="App">
       <Routes>

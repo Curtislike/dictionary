@@ -39,18 +39,16 @@ export function recieveWordDefinitionError(error: string): RecieveWordDefinition
   };
 }
 
-export const fetchWordDefenition = (word: string, successCallback?: () => void, errorCallback?: () => void) => {
+export const fetchWordDefenition = (word: string, errorCallback?: () => void, successCallback?: () => void) => {
   return async (dispatch: Dispatch<ActionTypes>) => {
     dispatch(recieveWordDefinitionPending());
     try {
       const wordDefinition = await getWordDefinition(word);
       dispatch(recieveWordDefinitionSuccess(wordDefinition));
-      if (successCallback && errorCallback) {
-        if (Array.isArray(wordDefinition)) {
-          successCallback();
-        } else {
-          errorCallback();
-        }
+      if (successCallback && Array.isArray(wordDefinition)) {
+        successCallback();
+      } else {
+        if (errorCallback) errorCallback();
       }
     } catch (error) {
       dispatch(recieveWordDefinitionError('Error...'));

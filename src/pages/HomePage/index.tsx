@@ -1,10 +1,8 @@
-import React, { useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { Route, Routes, Outlet, useLocation, useNavigate } from 'react-router-dom';
+import React from 'react';
+import { Outlet } from 'react-router-dom';
+
 import SearchBox from '../../common/components/SearchBox';
 import Header from '../../components/Header';
-import { fetchWordDefenition } from '../../store/actions/wordDefinition.actions';
-import ResultPage from '../ResultPage';
 
 import styles from './styles.module.scss';
 

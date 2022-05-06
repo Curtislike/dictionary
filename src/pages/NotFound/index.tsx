@@ -7,7 +7,7 @@ import styles from './styles.module.scss';
 const NotFound = () => {
   const navigate = useNavigate();
 
-  const goToMainPage = () => {
+  const goToHomePage = () => {
     navigate('/');
   };
 
@@ -15,7 +15,7 @@ const NotFound = () => {
     <div className={styles.notFound}>
       <h1>404</h1>
       <p>Sorry, page not found :(</p>
-      <Button title="Back" onClick={goToMainPage} />
+      <Button title="Back" onClick={goToHomePage} />
     </div>
   );
 };

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
@@ -14,25 +14,23 @@ interface ISearchBoxProps {
 
 const SearchBox = ({ handleChangeWord, word }: ISearchBoxProps) => {
   const dispatch = useDispatch();
-  // const [value, setValue] = useState('');
   const navigate = useNavigate();
 
   const handleInputChange = (event: { target: { value: string } }) => {
-    // setValue(event.target.value);
     handleChangeWord(event.target.value);
-  };
-
-  const changePageSuccess = () => {
-    navigate(`/${word}`);
   };
 
   const changePageNotFound = () => {
     navigate('/not-found');
   };
 
+  const changePageSuccess = () => {
+    navigate(`/${word}`);
+  };
+
   const handleSubmit = (event: { preventDefault: () => void }) => {
     event.preventDefault();
-    dispatch(fetchWordDefenition(word, changePageSuccess, changePageNotFound));
+    dispatch(fetchWordDefenition(word, changePageNotFound, changePageSuccess));
   };
 
   return (
