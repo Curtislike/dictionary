@@ -1,5 +1,64 @@
+@import '../../variables/colors';
+
 .loader {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.words {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  max-width: 600px;
+  .wordWrap {
+    margin: 20px;
+    padding: 20px;
+    background-color: $background;
+    border-radius: 3px;
+    .word {
+      font-size: 26px;
+      font-weight: 500;
+    }
+    .phonetic {
+      font-size: 18px;
+      padding: 5px 0;
+    }
+    .phonetics {
+      .phoneticsItem {
+        margin: 20px 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        button {
+          padding: 5px;
+          cursor: pointer;
+          border: none;
+          background-color: $background;
+          display: flex;
+          justify-content: flex-start;
+        }
+        a {
+          font-size: 12px;
+        }
+      }
+    }
+    .meanings {
+      .partOfSpeech {
+        font-size: 18px;
+        font-weight: 500;
+        color: $light-blue;
+        padding: 10px 0;
+      }
+      .defenition {
+        font-weight: 500;
+      }
+      .example {
+        padding: 10px 0;
+        font-style: italic;
+      }
+    }
+  }
 }

@@ -1,5 +1,5 @@
 @import '../../../variables/colors';
-
+@import '../../../variables/screen-sizes';
 .button {
   border: 2px solid $light-blue;
   border-radius: 3px;
@@ -12,5 +12,12 @@
   &:hover {
     background-color: $light-blue;
     color: white;
+  }
+}
+
+@media (max-width: $tablet-small) {
+  .button {
+    padding: 5px;
+    min-width: 70px;
   }
 }

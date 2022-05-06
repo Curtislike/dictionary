@@ -21,7 +21,9 @@ interface IResponseWordDefinition {
       synonyms: string[];
       antonyms: string[];
     }[];
-  };
+    synonyms: string[];
+    antonyms: string[];
+  }[];
   license?: {
     name?: string;
     url?: string;
