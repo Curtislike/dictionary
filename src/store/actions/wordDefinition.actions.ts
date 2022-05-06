@@ -45,10 +45,11 @@ export const fetchWordDefenition = (word: string, errorCallback?: () => void, su
     try {
       const wordDefinition = await getWordDefinition(word);
       dispatch(recieveWordDefinitionSuccess(wordDefinition));
-      if (successCallback && Array.isArray(wordDefinition)) {
-        successCallback();
-      } else {
-        if (errorCallback) errorCallback();
+      if (Array.isArray(wordDefinition)) {
+        successCallback && successCallback();
+      }
+      if (!Array.isArray(wordDefinition)) {
+        errorCallback && errorCallback();
       }
     } catch (error) {
       dispatch(recieveWordDefinitionError('Error...'));
