@@ -3,7 +3,7 @@ import { IWordDefinitionState } from '../types/types';
 import { RECIEVE_WORD_DEFINITION_ERROR, RECIEVE_WORD_DEFINITION_PENDING, RECIEVE_WORD_DEFINITION_SUCCESS } from '../types/wordDefinition.types';
 
 const initialState: IWordDefinitionState = {
-  wordDefenition: null,
+  wordDefenition: [],
   isLoading: true,
   error: null,
 };

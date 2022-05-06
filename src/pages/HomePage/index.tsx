@@ -1,17 +1,22 @@
 import React from 'react';
-import { Route, Routes, Outlet } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
+
 import SearchBox from '../../common/components/SearchBox';
 import Header from '../../components/Header';
-import ResultPage from '../ResultPage';
 
 import styles from './styles.module.scss';
 
-const HomePage = () => {
+interface IHomePageProps {
+  handleChangeWord(value: string): void;
+  word: string;
+}
+
+const HomePage = ({ handleChangeWord, word }: IHomePageProps) => {
   return (
     <>
       <Header />
       <div className={styles.searchWrap}>
-        <SearchBox />
+        <SearchBox handleChangeWord={handleChangeWord} word={word} />
       </div>
       <Outlet />
     </>
